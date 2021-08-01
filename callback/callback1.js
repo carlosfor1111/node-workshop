@@ -1,3 +1,5 @@
+
+
 let doWork = function(job , timer , cb){
     setTimeout(()=>{
         let dt = new Date();
@@ -5,6 +7,7 @@ let doWork = function(job , timer , cb){
     },timer);
 };
 
+//callback hell
 
 let dt = new Date();
 console.log(`開始工作 at ${dt.toISOString()}`);
