@@ -1,9 +1,3 @@
-function SumData(n) {
-  let sum = 0;
-  for (let i = 1; i <= n; i++) {
-    sum += i;
-  }
-  console.log(sum);
-}
-
-SumData(10);
+printf(“Twinkle, twinkle, little star\nHow I wonder what you
+are\nUp above the world so high\nLike a diamond in the
+sky\n”);
