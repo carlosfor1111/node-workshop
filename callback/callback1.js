@@ -1,37 +1,37 @@
-let doWork = function(job , timer , cb){
-    setTimeout(()=>{
-        let dt = new Date();
-        cb(null, `完成工作: ${job} at ${dt.toISOString()}` );
-    },timer);
+let doWork = function (job, timer, cb) {
+  setTimeout(() => {
+    let dt = new Date();
+    cb(null, `完成工作: ${job} at ${dt.toISOString()}`);
+  }, timer);
 };
 
 //callback hell
-
+  
 let dt = new Date();
 console.log(`開始工作 at ${dt.toISOString()}`);
 
-doWork("刷牙" ,3000, function(err, data){
-    if(err){
-        console.err('發生錯誤了:',err);
-        return;
+doWork("刷牙", 3000, function (err, data) {
+  if (err) {
+    console.err("發生錯誤了:", err);
+    return;
+  }
+  console.log(data);
+
+  doWork("吃早餐", 3000, function (err, data) {
+    if (err) {
+      console.err("發生錯誤了:", err);
+      return;
     }
     console.log(data);
 
-    doWork("吃早餐", 3000, function (err, data) {
+    doWork("睡覺", 5000, function (err, data) {
       if (err) {
         console.err("發生錯誤了:", err);
         return;
       }
       console.log(data);
-
-        doWork("睡覺", 5000, function (err, data) {
-          if (err) {
-            console.err("發生錯誤了:", err);
-            return;
-          }
-          console.log(data);
-        });
     });
+  });
 });
 
 // /* 使用foreach寫法 */
@@ -54,6 +54,7 @@ doWork("刷牙" ,3000, function(err, data){
 //     timer: 3000,
 //   },
 // ];
+
 // let time = 0;
 // /* 使用forEach迴圈將 array 中的 object 逐個取出 */
 // doWorks.forEach(function (doWork, index) {
