@@ -12,16 +12,35 @@ let doWork = function (job, timer, isOK) {
   });
 };
 
-let dt = new Date();
-console.log(`開始工作 at ${dt.toISOString()}`);
-
 let job1 = doWork("刷牙", 3000, true);
-console.log(job1);
+// dowork回傳的是promise的物件
 job1.then(
-  function (resolve) {
-    console.log("第一個函式被呼叫了", resolve);
+  (result) => {
+    console.log("第一個函式被呼叫了", result);
   },
-  function (reject) {
-    console.log("第二個函式被呼叫了", reject);
+  (error) => {
+    console.log("第二個函式被呼叫了", error);
+  }
+);
+
+let job2 = doWork("吃早餐", 5000, true);
+// dowork回傳的是promise的物件
+job2.then(
+  (result) => {
+    console.log("第一個函式被呼叫了", result);
+  },
+  (error) => {
+    console.log("第二個函式被呼叫了", error);
+  }
+);
+
+let job3 = doWork("睡覺", 5000, true);
+// dowork回傳的是promise的物件
+job3.then(
+  (result) => {
+    console.log("第一個函式被呼叫了", result);
+  },
+  (error) => {
+    console.log("第二個函式被呼叫了", error);
   }
 );
