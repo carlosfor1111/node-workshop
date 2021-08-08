@@ -8,7 +8,7 @@ async function doWork(){
       if (err) {
         reject(err);
       } else {
-        resolve(stockCode);
+        resolve(stockCode.trim());
       }
     });
   });
