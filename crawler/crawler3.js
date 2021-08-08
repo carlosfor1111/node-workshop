@@ -1,8 +1,6 @@
 const axios = require("axios");
 const moment = require("moment");
 const fs = require("fs");
-const { resolve } = require("path");
-const { rejects } = require("assert");
 
 async function doWork(){
   let stockCode = await new Promise((resolve, reject) => {
